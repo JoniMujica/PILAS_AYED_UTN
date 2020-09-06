@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PILAS_AYED", "PILAS_AYED.vcxproj", "{9811C7D8-B45A-467D-8316-F505D8C4AC13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9811C7D8-B45A-467D-8316-F505D8C4AC13}.Debug|x64.ActiveCfg = Debug|x64
+		{9811C7D8-B45A-467D-8316-F505D8C4AC13}.Debug|x64.Build.0 = Debug|x64
+		{9811C7D8-B45A-467D-8316-F505D8C4AC13}.Debug|x86.ActiveCfg = Debug|Win32
+		{9811C7D8-B45A-467D-8316-F505D8C4AC13}.Debug|x86.Build.0 = Debug|Win32
+		{9811C7D8-B45A-467D-8316-F505D8C4AC13}.Release|x64.ActiveCfg = Release|x64
+		{9811C7D8-B45A-467D-8316-F505D8C4AC13}.Release|x64.Build.0 = Release|x64
+		{9811C7D8-B45A-467D-8316-F505D8C4AC13}.Release|x86.ActiveCfg = Release|Win32
+		{9811C7D8-B45A-467D-8316-F505D8C4AC13}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2AA42CCA-4057-4B73-B226-B0155671BEC4}
+	EndGlobalSection
+EndGlobal
