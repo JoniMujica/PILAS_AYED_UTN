@@ -1,3 +1,6 @@
+﻿//2) Dada una pila de n�meros enteros y un valor entero que llamamos X, desarrollar un
+//procedimiento que inserte X como tercer elemento de la pila.
+
 #include <iostream>
 
 using namespace std;
@@ -7,13 +10,42 @@ struct Nodo
 	int dato;
 	Nodo* siguiente;
 };
+void TercerElemento(Nodo*&, int);
+void push(Nodo*&, int);
+int pop(Nodo*&);
 
 int main() {
 	Nodo* pila = NULL;
 
+	for (int i = 0; i < 10; i++)
+	{
+		cout << "elemento cargado a la pila: " << i << endl;
+		push(pila, i);
+	}
+
+	TercerElemento(pila, 750);
+
+	cout << "--------------------------------" << endl;
+	cout << "Elementos en pila!!!!!!!!!!" << endl;
+
+	while (pila != NULL)
+	{
+		int a = pop(pila);
+		cout << "Elementos de la pila: " << a << endl;
+	}
+
 	return 0;
 }
 
+void TercerElemento(Nodo*& pila, int dat) {
+	int a = pop(pila);
+	int b = pop(pila);
+	push(pila, dat);
+	push(pila, b);
+	push(pila, a);
+	
+	return;
+}
 void push(Nodo*& pila, int dat) {
 	Nodo* Nuevo_nodo = new Nodo(); //pido un espacio en memoria para la nueva pila (nuevo nodo)
 	Nuevo_nodo->dato = dat; // cargo el valor dentro del nodo (campo 'dato')
