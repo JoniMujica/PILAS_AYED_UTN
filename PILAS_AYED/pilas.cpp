@@ -18,44 +18,39 @@ int pop(Nodo*&);
 int main() {
 	Nodo* pila = NULL;
 	Nodo* pilaaux = NULL;
-	int x;
 	for (int i = 0; i < 10; i++)
 	{
 		push(pila, i);
-		cout << "Elemento agregado: " << i << endl;
+		cout << "Elemento agregado: " << i << endl; //cargo la pila de elementos
 	}
-	cout << "Ingrese un valor" << endl;
-	cin >> x;
-	push(pila, x);
+	
+	Ultimo(pila, pilaaux); // realiza el intercambio de 'pila' a 'pilaaux' e inserta la variable 'x' a la ultima posicion
 
-	Ultimo(pila, pilaaux);
-
-
-	while (pila != NULL) {
-		int res = pop(pila);
-		cout << "Elementos de la pila1: " << res << endl;
-	}
-	//Ultimo(pila, pilaaux);
-	cout << endl << endl << endl;
-	while (pilaaux != NULL) {
-		int res = pop(pilaaux);
-		cout << "Elementos de la pila2: " << res << endl;
+	while (pila != NULL) { //mientras pila sea distinto de NULL, imprime
+		int res = pop(pila); //trae todos los valores de la pila y se lo asigna a la variable
+		cout << "Elementos de la pila1: " << res << endl; //imprime cada elemento de la pila
 	}
 	return 0;
 }
 
 void Ultimo(Nodo*& pila ,Nodo*& pilaux) {
-	int base = pop(pila);
+	int x;
+	cout << "Ingrese un valor" << endl;
+	cin >> x; // pido al usuario el elemento para agregarlo a la pila
+	push(pila, x); // agrego la variable en la pila 'pila'
+
+
+	int base = pop(pila); // guardo el ultimo elemento de la pila 
 	while (pila != NULL)
 	{
-		int elementos = pop(pila);
-		push(pilaux, elementos);
+		int elementos = pop(pila);  //guardo los elementos de la pila temporalmente
+		push(pilaux, elementos); // envio los elementos guardado a la otra pila 'pilaux'
 	}
-	push(pila, base);
+	push(pila, base);  //inserto el elemento guardado anterior mente de la pila para que quede ultimo
 	while (pilaux != NULL)
 	{
-		int element = pop(pilaux);
-		push(pila, element);
+		int element = pop(pilaux); // guardo temporalmente los elementos de 'pilaux' en la variable
+		push(pila, element); //envio los elementos a la pila 'pila'
 	}
 }
 
