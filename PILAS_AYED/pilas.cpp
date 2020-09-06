@@ -17,20 +17,11 @@ int pop(Nodo*&);
 
 int main() {
 	Nodo* pila = NULL;
-	int x;
-
 	for (int i = 0; i < 5; i++)
 	{
 		push(pila, i); //cargo la pila de 2 elementos
 		cout << "Elementos cargados en pila: " << i << endl; //verifico que se hayan cargado los elementos
 	}
-	for (int j = 0; j < 2; j++)
-	{
-		cout << "Ingrese un valor para agregar a la pila: " << endl;
-		cin >> x;
-		push(pila, x);
-		cout << "Elemento " << x << " agregado correctamente a pila!!" << endl << endl;
- 	}
 	intercambio(pila);
 
 	while (pila != NULL)
@@ -38,7 +29,6 @@ int main() {
 		int elementos = pop(pila);
 		cout << "Elementos de pila: " << elementos << endl;
 	}
-	 
 	return 0;
 }
 
