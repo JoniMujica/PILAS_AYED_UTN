@@ -11,6 +11,7 @@ struct Nodo
 	Nodo* siguiente;
 };
 
+void EliminarElementos(Nodo*&, int);
 void push(Nodo*&, int);
 int pop(Nodo*&);
 
@@ -21,6 +22,7 @@ int main() {
 		push(pila, i);  //cargo la pila de 10 elementos
 		cout << "Elemnto cargado: " << i << endl;
 	}
+	EliminarElementos(pila, 150);
 
 	cout << "Pilas cargadas correctamente!!" << endl;
 	cout << "----------------------------" << endl;
@@ -30,11 +32,17 @@ int main() {
 		int a = pop(pila); //saco los elementos de la pila para que muestre el valor de cada uno de ellas (variable del return)
 		cout << "Obtengo el Elemento de la pila: " << a << endl;  // Muestro en consola la variable que devuelve la funcion
 	}
-
-
 	return 0;
 }
 
+void EliminarElementos(Nodo*& pila, int dat) {
+	for (int i = 0; i < 2; i++)
+	{
+		pop(pila);
+	}
+	push(pila, dat);
+	return;
+}
 
 //Pone un nodo en la pila
 void push(Nodo*& pila, int dat) { //se invoca con la pila, que siempre se modifica, y el valor a guardar dat
