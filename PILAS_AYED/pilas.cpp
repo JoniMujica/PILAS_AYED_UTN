@@ -1,4 +1,5 @@
-
+// Dada una pila y dos valores X e I, desarrollar un procedimiento que inserte el valor X en la posición I de la pila 
+// si es posible. (Definir parámetros y codificar).
 
 #include <iostream>
 
@@ -17,10 +18,19 @@ int pop(Nodo*&);
 
 int main() {
 	Nodo* pila = NULL;
+	int dato;
 	for (int i = 0; i < 5; i++)
 	{
 		push(pila, i); //cargo la pila de 2 elementos
 		cout << "Elementos cargados en pila: " << i << endl; //verifico que se hayan cargado los elementos
+	}
+
+	for (int j = 0; j < 2; j++)
+	{
+		cout << "Ingrese un valor para agregar a la pila: " << endl;
+		cin >> dato; //pido un elemento al usuario y lo guardo en la variable 'dato'
+		push(pila, dato); //envio el dato a la pila para que sea cargado
+		cout << "Elemento " << dato << " agregado correctamente a pila!!" << endl << endl;
 	}
 	intercambio(pila);
 
@@ -33,10 +43,10 @@ int main() {
 }
 
 void intercambio(Nodo*& pila) {
-	int a = pop(pila);
-	int b = pop(pila);
-	push(pila, a);
-	push(pila, b);
+	int x = pop(pila);
+	int l = pop(pila);
+	push(pila, x);
+	push(pila, l);
 }
 
 void push(Nodo*& pila, int dat) {
