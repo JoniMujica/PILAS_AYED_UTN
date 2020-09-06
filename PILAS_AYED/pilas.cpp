@@ -1,3 +1,5 @@
+// Dada una pila y un valor X, desarrollar un procedimiento que inserte el valor X en la última posición de la pila y la retorne. (Definir parámetros y codificar).
+
 #include <iostream>
 
 using namespace std;
@@ -8,10 +10,53 @@ struct Nodo
 	Nodo* siguiente;
 };
 
+
+void Ultimo(Nodo*&,Nodo*&);
+void push(Nodo*&, int);
+int pop(Nodo*&);
+
 int main() {
 	Nodo* pila = NULL;
+	Nodo* pilaaux = NULL;
+	int x;
+	for (int i = 0; i < 10; i++)
+	{
+		push(pila, i);
+		cout << "Elemento agregado: " << i << endl;
+	}
+	cout << "Ingrese un valor" << endl;
+	cin >> x;
+	push(pila, x);
 
+	Ultimo(pila, pilaaux);
+
+
+	while (pila != NULL) {
+		int res = pop(pila);
+		cout << "Elementos de la pila1: " << res << endl;
+	}
+	//Ultimo(pila, pilaaux);
+	cout << endl << endl << endl;
+	while (pilaaux != NULL) {
+		int res = pop(pilaaux);
+		cout << "Elementos de la pila2: " << res << endl;
+	}
 	return 0;
+}
+
+void Ultimo(Nodo*& pila ,Nodo*& pilaux) {
+	int base = pop(pila);
+	while (pila != NULL)
+	{
+		int elementos = pop(pila);
+		push(pilaux, elementos);
+	}
+	push(pila, base);
+	while (pilaux != NULL)
+	{
+		int element = pop(pilaux);
+		push(pila, element);
+	}
 }
 
 void push(Nodo*& pila, int dat) {
