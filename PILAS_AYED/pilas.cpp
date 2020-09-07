@@ -1,3 +1,5 @@
+//Dada una pila y dos valores X e Y, desarrollar un procedimiento que reemplace cada valor igual a X que se encuentre en la pila por el valor Y retornando la pila modificada. En caso de no haber ningún valor igual a X retornar la pila sin cambio. (Definir parámetros y codificar).
+
 #include <iostream>
 
 using namespace std;
@@ -7,11 +9,46 @@ struct Nodo
 	int dato;
 	Nodo* siguiente;
 };
+void CompChange(Nodo*&, int,int, int);
+void push(Nodo*&, int);
+int pop(Nodo*&);
 
 int main() {
 	Nodo* pila = NULL;
+	int x, y, data;
+	cout << "Ingrese el valor que quiere comprar" << endl;
+	cin >> x;
+	cout << "Ingrese el valor que desea reemplazar" << endl;
+	cin >> y;
 
+	cout << "Ingrese valores a la pila: " << endl;
+	cin >> data;
+	while (data >= 0) {
+		cout << "Ingrese valores a la pila: " << endl;
+		cin >> data;
+		if (data >= 0)
+		{
+			push(pila, data);
+			CompChange(pila, x, y, data);
+		}
+	}
+
+	while (pila != NULL)
+	{
+		int res = pop(pila);
+		cout << "Elementos de la pila modificada:  " << res << endl;
+	}
 	return 0;
+}
+
+void CompChange(Nodo*& pila, int x,int y, int data) {
+
+	if (data == x)
+	{
+		pop(pila);
+		if (data>=0)
+		push(pila, y);
+	}
 }
 
 void push(Nodo*& pila, int dat) {
